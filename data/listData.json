@@ -1,0 +1,53 @@
+{
+    "items": [
+      {
+        "price":40,
+        "contentType":"story",
+        "id":"1",
+        "title": "Indian mission offers to fly home Hyderabad woman seen starving on Chicago streets",
+        "discription":"Syeda Lulu Minhaj Zaidi went to the US to pursue her Masters, but months later, she was found starving on the streets of Chicago. Now, the Consulate",       
+        "imgUrl":"https://img.freepik.com/premium-photo/illustration-neon-tropical-theme-with-palm-tree-exotic-floral-ai_564714-1270.jpg"
+      },
+      {
+        "price":60,
+        "contentType":"story",
+        "id":"2",
+        "title": "Government official who won Rs 50 lakh in KBC resigns from post. Then, a twist",
+        "discription":"Tehsildar Amita Singh Tomar, who had earlier won Rs 50 lakh on Amitabh Bachchan's quiz show 'KBC', resigned from the post on Friday but withdre",       
+        "imgUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT5QzZPM1VTLuvcb2CxM4DIu8qDjoP1i72jg&usqp=CAU"
+      },
+      {
+        "price":12,
+        "contentType":"vedio",
+        "id":"3",
+        "title": "Video: Rollercoaster in US freezes at 205-foot drop. Here's what happened next",
+        "discription":"A rollercoaster ride in US's Ohio stopped suddenly after a mechanical issue. All passengers were uninjured, and park staff safely led them down a stee",       
+        "imgUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoXdxC2obNKBerzspYFfvGQH92xut76fiO2A&usqp=CAU"
+      },
+      {
+        "price":32,
+        "contentType":"story",
+        "id":"4",
+        "title": "Zomato CEO turns delivery partner for a day, says ‘Best Sunday ever’",
+        "discription":"Zomato CEO Deepinder Goyal celebrated Friendship Day in a very thoughtful way. He distributed food and friendship bands to customers",       
+        "imgUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk3upbyaCJAYkAu-hEAK5n55vESy5sI6LDGg&usqp=CAU"
+      },
+      {
+        "price":35,
+        "contentType":"story",
+        "id":"4",
+        "title": "No AC on IndiGo flight, passengers handed tissues to wipe sweat: Congress leader",
+        "discription":"Punjab Congress Committee president Amarinder Singh Raja Warring on Saturday said that an IndiGo aircraft, travelling from Chandigarh to Jaipur, took off without ACs on and",       
+        "imgUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX2uHUcaMAxL1b7g6TXKzaPCJtgKIKkACoIQ&usqp=CAU"
+      },
+      {
+        "price":34,
+        "contentType":"story",
+        "id":"4",
+        "title": "Amit Shah shares stage with Ajit Pawar in Pune, says 'you took a long time to",
+        "discription":"Union Home Minister Amit Shah shared the stage with NCP leader Ajit Pawar for the first time today at an event in Pune. This is Amit Shah's first",       
+        "imgUrl":"https://wallpapercave.com/uwp/uwp2421132.png"
+      }
+
+    ]
+  }
