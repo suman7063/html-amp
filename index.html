@@ -1,132 +1,69 @@
-<!DOCTYPE html>
-<html amp lang="en">
+<!-- <!DOCTYPE html>
+<html ⚡>
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+  <title>AMP Script Example</title>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-  <title>Hello, AMPs</title>
-  <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto|Montserrat:400,600|Lato:400,700" rel="stylesheet"
-    type="text/css" />
-    <style amp-custom>
-      @import url('css/index.css');
- </style>
+  <link rel="canonical" href="self.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>
-    body {
-      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      background-color: #301934;
-    }
-
-    @-webkit-keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-
-    @-moz-keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-
-    @-ms-keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-
-    @-o-keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-
-    @keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
+    /* Boilerplate styles go here */
   </style>
   <noscript>
     <style amp-boilerplate>
-      body {
-        -webkit-animation: none;
-        -moz-animation: none;
-        -ms-animation: none;
-        animation: none;
-      }
+      /* Fallback styles for non-JS users go here */
     </style>
   </noscript>
-  <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
-  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
-  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
- 
-  <script async custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js"></script>
-  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 </head>
-
 <body>
-  <amp-install-serviceworker
-  src="http://localhost:3006/serviceworker.js"
-  data-iframe-src="https://www.your-domain.com/install-serviceworker.html"
-  layout="nodisplay"
->
-</amp-install-serviceworker>
-    <div class='container'>
-      <div class="heading">Fake News Site</div>
-      <div>
-        <amp-list id="amp-list-placeholder" noloading layout="fixed-height" height="654" src="data/listData.json" binding="no">
-          <div placeholder>
-            <div class="product">
-              <div class="image-placeholder"></div>
-              <div>Loading...</div>
-            </div>
-          </div>
-          <amp-lightbox id="my-lightbox" layout="nodisplay">
-            <div class="lightbox" on="tap:my-lightbox.close" role="button" tabindex="0">
-              <amp-iframe id="sample-resizable-iframe" width="700" height="550"  src="component/paywall.html">
-                <div overflow tabindex="0" role="button" aria-label="Show more" placeholder>Click to show more</div>
-              </amp-iframe>
-            </div>
-          </amp-lightbox>
-          <template type="amp-mustache">
-              <div class="list-item-container">
-                  <amp-img width="150" height="100" src="{{imgUrl}}"></amp-img>
-                  <div class="news-title-wrap">
-                    <div class="news-title" on="tap:my-lightbox">{{title}}</div> 
-                    <div class="news-discription">{{{discription}}}</div>
-                  </div>
-              </div>
-          </template>
-        </amp-list>
-       </div>
-      
-     </div>
+  <button id="callSdkMethodButton" on="tap:AMP.setState({ displayText: 'Loading SDK method...' }), mySdkMethod('Argument 1', 'Argument 2')">Call SDK Method</button>
+
+  <amp-script layout="fixed-height" height="50">
+    <script type="module">
+      document.getElementById('callSdkMethodButton').addEventListener('click', () => {
+        // Load the external script dynamically
+        const script = document.createElement('script');
+        script.src = 'http://localhost:3007/js/check.js'; // Adjust the path as needed
+        script.onload = () => {
+          // Call the SDK method once the script is loaded
+          mySdkMethod();
+        };
+        document.head.appendChild(script);
+      });
+    </script>
+  </amp-script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title>AMP Script Example</title>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <link rel="canonical" href="self.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>
+    /* Boilerplate styles go here */
+  </style>
+  <noscript>
+    <style amp-boilerplate>
+      /* Fallback styles for non-JS users go here */
+    </style>
+  </noscript>
+</head>
+<body>
+  <button id="callSdkMethodButton">Call SDK Method</button>
+
+  <amp-script layout="fixed-height" height="50">
+    <script type="module">
+      const script = document.createElement('script');
+      script.src = 'http://localhost:3007/js/check.js';
+      script.onload = () => {
+        mySdkMethod('Argumejhjyhjhnt 1', 'Argumenjhjhjjnt 2');
+      };
+      document.head.appendChild(script);
+    </script>
+  </amp-script>
 </body>
 </html>
