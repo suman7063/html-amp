@@ -1,69 +1,42 @@
-<!-- <!DOCTYPE html>
-<html ⚡>
-<head>
-  <meta charset="utf-8">
-  <title>AMP Script Example</title>
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <link rel="canonical" href="self.html">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <style amp-boilerplate>
-    /* Boilerplate styles go here */
-  </style>
-  <noscript>
-    <style amp-boilerplate>
-      /* Fallback styles for non-JS users go here */
-    </style>
-  </noscript>
-  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-</head>
-<body>
-  <button id="callSdkMethodButton" on="tap:AMP.setState({ displayText: 'Loading SDK method...' }), mySdkMethod('Argument 1', 'Argument 2')">Call SDK Method</button>
-
-  <amp-script layout="fixed-height" height="50">
-    <script type="module">
-      document.getElementById('callSdkMethodButton').addEventListener('click', () => {
-        // Load the external script dynamically
-        const script = document.createElement('script');
-        script.src = 'http://localhost:3007/js/check.js'; // Adjust the path as needed
-        script.onload = () => {
-          // Call the SDK method once the script is loaded
-          mySdkMethod();
-        };
-        document.head.appendChild(script);
-      });
-    </script>
-  </amp-script>
-</body>
-</html> -->
 <!DOCTYPE html>
 <html ⚡>
 <head>
   <meta charset="utf-8">
-  <title>AMP Script Example</title>
+  <title>Sender AMP Page</title>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <link rel="canonical" href="self.html">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <style amp-boilerplate>
-    /* Boilerplate styles go here */
-  </style>
-  <noscript>
-    <style amp-boilerplate>
-      /* Fallback styles for non-JS users go here */
-    </style>
-  </noscript>
+  <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
 </head>
 <body>
-  <button id="callSdkMethodButton">Call SDK Method</button>
+  <!-- AMP Div Element for Showing the Iframe -->
+  <div id="iframe-container" class="iframe-container"></div>
 
-  <amp-script layout="fixed-height" height="50">
+  <!-- AMP Script for Initializing csc on Page Load -->
+  <amp-script layout="container">
     <script type="module">
-      const script = document.createElement('script');
-      script.src = 'http://localhost:3007/js/check.js';
-      script.onload = () => {
-        mySdkMethod('Argumejhjyhjhnt 1', 'Argumenjhjhjjnt 2');
-      };
-      document.head.appendChild(script);
+      const targetDivId = 'iframe-container'; // ID of the target div
+
+      (async () => {
+        try {
+          // Dynamically load sdk.js script
+          const cscScript = document.createElement('script');
+          cscScript.src = 'http://localhost:3008/js/sdk.js';
+          cscScript.async = true;
+
+          // Wait for script to load
+          await new Promise((resolve) => {
+            cscScript.onload = resolve;
+            document.head.appendChild(cscScript);
+          });
+
+          // Call the csc init function with clientId and targetDivId
+          window.csc.init('YOUR_CLIENT_ID_HERE', targetDivId); // Replace with your client ID
+        } catch (error) {
+          console.error('Error loading or initializing csc-sdk:', error);
+        }
+      })();
     </script>
   </amp-script>
 </body>
 </html>
+
+
